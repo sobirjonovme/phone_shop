@@ -6,7 +6,9 @@ from apps.common.models import BaseModel
 
 # Create your models here.
 class Company(BaseModel):
-    name = models.CharField(max_length=255)
+    name = models.CharField(
+        verbose_name=_("Ishlab chiqaruvchi nomi"), max_length=255
+    )
 
     class Meta:
         verbose_name = _("Ishlab chiqaruvchi")
@@ -23,7 +25,9 @@ class ProductType(BaseModel):
         on_delete=models.CASCADE,
         related_name="product_types"
     )
-    name = models.CharField(max_length=255)
+    name = models.CharField(
+        verbose_name=_("Mahsulot nomi"), max_length=255
+    )
 
     class Meta:
         verbose_name = _("Mahsulot turi")
