@@ -16,16 +16,16 @@ class SoldProductAdmin(unfold_admin.ModelAdmin):
     readonly_fields = ("product_type", "imei", "status", "purchase_price")
 
     def product_type(self, obj):
-        return obj.product.product_type.name
+        return obj.product.product_type.name or "-"
 
     def imei(self, obj):
-        return obj.product.imei
+        return obj.product.imei or "-"
 
     def status(self, obj):
-        return obj.product.status
+        return obj.product.status or "-"
 
     def purchase_price(self, obj):
-        return obj.product.purchase_price
+        return obj.product.purchase_price or "-"
 
     product_type.short_description = _("Mahsulot turi")
     imei.short_description = _("IMEI")
