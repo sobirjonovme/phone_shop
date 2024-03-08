@@ -52,6 +52,9 @@ class Product(BaseModel):
     purchase_price = models.DecimalField(
         verbose_name=_("Xarid qilingan narx"), max_digits=13, decimal_places=2
     )
+    status = models.CharField(
+        verbose_name=_("Holati"), max_length=255, null=True, blank=True
+    )
     purchased_from = models.CharField(
         verbose_name=_("Xarid qilingan joy/odam"), max_length=255, null=True, blank=True
     )
@@ -67,4 +70,4 @@ class Product(BaseModel):
         verbose_name_plural = _("Mahsulotlar")
 
     def __str__(self):
-        return f"#{self.id} {self.product_type.name}"
+        return f"#{self.id} - {self.imei} - {self.product_type.name}"

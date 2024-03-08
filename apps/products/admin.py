@@ -23,7 +23,7 @@ class ProductTypeAdmin(unfold_admin.ModelAdmin):
 
 @admin.register(Product)
 class ProductAdmin(unfold_admin.ModelAdmin):
-    list_display = ("id", "company", "product_type", "imei", "is_sold", "purchase_price", "purchased_from", "purchase_date")
+    list_display = ("id", "company", "product_type", "imei", "is_sold", "status", "purchase_price", "purchased_from", "purchase_date")
     list_display_links = ("id", "company", "product_type", "imei",)
     search_fields = ("id", "company__name", "product_type__name", "imei", "purchased_from",)
     list_filter = ("is_sold", "company", "product_type")
