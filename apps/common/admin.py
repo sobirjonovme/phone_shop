@@ -2,7 +2,7 @@ from django.contrib import admin
 from solo.admin import SingletonModelAdmin
 from unfold import admin as unfold_admin
 
-from apps.common.models import FrontendTranslation, TelegramNotification, VersionHistory
+from apps.common.models import FrontendTranslation, VersionHistory
 
 
 @admin.register(VersionHistory)
@@ -19,8 +19,3 @@ class FrontTranslationAdmin(unfold_admin.ModelAdmin):
     list_display_links = ("id", "key")
     list_filter = ("created_at", "updated_at")
     search_fields = ("key", "version")
-
-
-@admin.register(TelegramNotification)
-class TelegramNotificationAdmin(unfold_admin.ModelAdmin, SingletonModelAdmin):
-    readonly_fields = ("created_at", "updated_at")

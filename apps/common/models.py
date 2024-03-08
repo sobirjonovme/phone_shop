@@ -33,16 +33,3 @@ class FrontendTranslation(BaseModel):
 
     def __str__(self):
         return str(self.key)
-
-
-class TelegramNotification(SingletonModel, BaseModel):
-    bot_token = models.CharField(_("Bot token"), max_length=255)
-    chat_id = models.CharField(_("Chat ID"), max_length=255)
-    is_enabled = models.BooleanField(_("Is enabled"), default=False)
-
-    class Meta:
-        verbose_name = _("Telegram notification")
-        verbose_name_plural = _("Telegram notification")
-
-    def __str__(self):
-        return str(_("Telegram notification"))

@@ -9,8 +9,8 @@ class User(AbstractUser):
     last_name = models.CharField(max_length=255, verbose_name=_("Last Name"))
 
     class Meta:
-        verbose_name = _("User")
-        verbose_name_plural = _("Users")
+        verbose_name = _("Foydalanuvchi")
+        verbose_name_plural = _("Foydalanuvchilar")
 
     def __str__(self):
         name = f"{self.first_name} {self.last_name}" if self.first_name else self.username
